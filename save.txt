@@ -1,0 +1,28 @@
+a_mnoj = set()
+    def add_adg(value):
+        while value >1:
+            val_1 = value
+            if value % 2 == 0:
+                value = value // 2
+            else:
+                value = value * 3 + 1
+            a_mnoj.add((val_1, value))
+
+    n = 0
+    n = int(input())
+    for i in range(2, n+1):
+        add_adg(i)
+        #print(a_mnoj)
+
+    G = nx.DiGraph()
+    G.add_edges_from(a_mnoj)
+    net = Network(width=1890, height=870)
+
+
+    net.from_nx(G)
+    for node in net.nodes:
+        node['shape'] = 'circle'
+    print(net)
+
+    #net.show_buttons()
+    net.show("collatz.html")

@@ -1,0 +1,2 @@
+import MakeFileTask
+MakeFileTask.GFun()
